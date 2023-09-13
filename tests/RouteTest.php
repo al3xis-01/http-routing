@@ -1,10 +1,6 @@
 <?php
 
-namespace Tests;
-
 use PHPUnit\Framework\TestCase;
-use Yolanda\Routing\Exceptions\InvalidFunctionParametersException;
-use Yolanda\Routing\Exceptions\InvalidUrlParametersException;
 use Yolanda\Routing\Route;
 
 class RouteTest extends TestCase
