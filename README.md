@@ -24,7 +24,10 @@ $router->name('route2')
     ->post('/route2/:digit2', [\Routing\Test::class, 'funcion2'])
     ->done();
 
-$router->done();
+$resultOfCurrentRoute    =    $router->done();
+
+// Print a result of current route
+echo    $resultOfCurrentRoute;
 ```
 
 ## Project Structure
