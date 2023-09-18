@@ -1,6 +1,6 @@
 <?php
 
-namespace Yolanda\Routing\Exceptions;
+namespace Yolanda\Http\Routing\Exceptions;
 
 class InvalidFunctionException extends \Exception
 {

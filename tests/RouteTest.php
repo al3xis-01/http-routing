@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Yolanda\Routing\Route;
+use Yolanda\Http\Routing\Route;
 
 class RouteTest extends TestCase
 {
@@ -19,9 +19,9 @@ class RouteTest extends TestCase
 
 
     /**
-     * @covers \Yolanda\Routing\Route::name
-     * @covers \Yolanda\Routing\Route::uri
-     * @covers \Yolanda\Routing\Route::method
+     * @covers \Yolanda\Http\Routing\Route::name
+     * @covers \Yolanda\Http\Routing\Route::uri
+     * @covers \Yolanda\Http\Routing\Route::method
      * @return void
      */
     public function testGet(): void
@@ -46,7 +46,7 @@ class RouteTest extends TestCase
 
 
     /**
-     * @covers \Yolanda\Routing\Route::matches
+     * @covers \Yolanda\Http\Routing\Route::matches
      * @return void
      */
     public function testMatches(): void
@@ -66,7 +66,7 @@ class RouteTest extends TestCase
 
     /**
      *
-     * @covers \Yolanda\Routing\Route::dispatch
+     * @covers \Yolanda\Http\Routing\Route::dispatch
      */
     public function testDispatch(): void
     {

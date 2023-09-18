@@ -1,6 +1,6 @@
 <?php
 
-namespace Yolanda\Routing\Trait;
+namespace Yolanda\Http\Routing\Trait;
 
 trait RouteFunctions
 {

@@ -1,13 +1,12 @@
 <?php
 
-namespace Yolanda\Routing;
+namespace Yolanda\Http\Routing;
 
 use ReflectionException;
 use ReflectionFunction;
-use Yolanda\Routing\Exceptions\InvalidFunctionException;
-use Yolanda\Routing\Exceptions\InvalidFunctionParametersException;
-use Yolanda\Routing\Exceptions\InvalidUrlParametersException;
-use Yolanda\Routing\Trait\RouteFunctions;
+use Yolanda\Http\Routing\Exceptions\InvalidFunctionParametersException;
+use Yolanda\Http\Routing\Exceptions\InvalidUrlParametersException;
+use Yolanda\Http\Routing\Trait\RouteFunctions;
 
 /**
  * Represents a route definition used in a routing system.

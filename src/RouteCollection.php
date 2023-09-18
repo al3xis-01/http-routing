@@ -1,6 +1,6 @@
 <?php
 
-namespace Yolanda\Routing;
+namespace Yolanda\Http\Routing;
 
 use SplObjectStorage;
 

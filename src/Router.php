@@ -1,12 +1,12 @@
 <?php
 
-namespace Yolanda\Routing;
+namespace Yolanda\Http\Routing;
 
 use ReflectionException;
-use Yolanda\Routing\Exceptions\InvalidFunctionParametersException;
-use Yolanda\Routing\Exceptions\InvalidUrlParametersException;
-use Yolanda\Routing\Exceptions\RouteNotFoundException;
-use Yolanda\Routing\Trait\RouteFunctions;
+use Yolanda\Http\Routing\Exceptions\InvalidFunctionParametersException;
+use Yolanda\Http\Routing\Exceptions\InvalidUrlParametersException;
+use Yolanda\Http\Routing\Exceptions\RouteNotFoundException;
+use Yolanda\Http\Routing\Trait\RouteFunctions;
 
 /**
  * Route management class

@@ -1,11 +1,11 @@
 <?php
 
 
-use Yolanda\Routing\Exceptions\InvalidFunctionParametersException;
-use Yolanda\Routing\Exceptions\InvalidUrlParametersException;
-use Yolanda\Routing\Exceptions\RouteNotFoundException;
-use Yolanda\Routing\Router;
 use PHPUnit\Framework\TestCase;
+use Yolanda\Http\Routing\Exceptions\InvalidFunctionParametersException;
+use Yolanda\Http\Routing\Exceptions\InvalidUrlParametersException;
+use Yolanda\Http\Routing\Exceptions\RouteNotFoundException;
+use Yolanda\Http\Routing\Router;
 
 class RouterTest extends TestCase
 {
@@ -21,8 +21,8 @@ class RouterTest extends TestCase
     }
 
     /**
-     * @covers \Yolanda\Routing\Router::name
-     * @covers \Yolanda\Routing\Router::hasRouteByName
+     * @covers \Yolanda\Http\Routing\Router::name
+     * @covers \Yolanda\Http\Routing\Router::hasRouteByName
      * @return void
      */
     public function testSearchRouteByName()
@@ -47,8 +47,8 @@ class RouterTest extends TestCase
 
 
     /**
-     * @covers \Yolanda\Routing\Router::name
-     * @covers \Yolanda\Routing\Router::hasRouteByName
+     * @covers \Yolanda\Http\Routing\Router::name
+     * @covers \Yolanda\Http\Routing\Router::hasRouteByName
      * @return void
      */
     public function testSearchRouteByUri()
@@ -73,7 +73,7 @@ class RouterTest extends TestCase
 
     /**
      *
-     * @covers \Yolanda\Routing\Router::listRoutes
+     * @covers \Yolanda\Http\Routing\Router::listRoutes
      *
      * @return void
      */
@@ -99,8 +99,8 @@ class RouterTest extends TestCase
     }
 
     /**
-     * @covers \Yolanda\Routing\Router::done
-     * @covers \Yolanda\Routing\Router::doneWithParameters
+     * @covers \Yolanda\Http\Routing\Router::done
+     * @covers \Yolanda\Http\Routing\Router::doneWithParameters
      *
      * @return void
      * @throws ReflectionException

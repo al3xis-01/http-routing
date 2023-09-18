@@ -1,4 +1,4 @@
-# PHP Routing Library: php-routing
+# HTTP Routing Library: http-routing
 
 A lightweight and flexible routing library for PHP applications. Simplify the management of routes, define endpoints, and handle URL routing seamlessly within your web projects using this easy-to-use PHP routing library.
 
@@ -14,7 +14,7 @@ This library is currently not available on Composer, so it can only be used loca
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$router = new \Yolanda\Routing\Router();
+$router = new \Yolanda\Http\Routing\Router();
 
 $router->name('route1')
     ->get('/route1/{digit}', [\Routing\Test::class, 'funcion1'])
