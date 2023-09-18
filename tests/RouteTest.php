@@ -79,7 +79,7 @@ class RouteTest extends TestCase
 
         $route->setParameterValue('digit', $value);
         $route->setParameterValue('otherParameter', 'otherThing');
-        $this->assertEquals($this->funtionTemplateTest($value), $route->dispatch());
+        $this->assertEquals($this->funtionTemplateTest($value), $route->dispatch($uri, $method));
 
 
     }
