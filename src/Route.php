@@ -2,6 +2,7 @@
 
 namespace Yolanda\Http\Routing;
 
+use PharIo\Manifest\InvalidUrlException;
 use ReflectionException;
 use ReflectionFunction;
 use Yolanda\Http\Routing\Exceptions\InvalidFunctionParametersException;
@@ -183,7 +184,6 @@ class Route
 
             if ($parameterName = $this->getParameterFromSegment($uriSegments[$i])) {
                 if (in_array($parameterName, $this->parameters)) {
-                    $this->setParameterValue($parameterName, $uriRequestSegments[$i]);
                     continue;
                 }
             }
@@ -194,13 +194,38 @@ class Route
     }
 
     /**
+     * @param string $uri
+     * @param string $method
      * @return mixed
      * @throws InvalidFunctionParametersException
      * @throws InvalidUrlParametersException
      * @throws ReflectionException
      */
-    public function dispatch(): mixed
+    public function dispatch(string $uri, string $method): mixed
     {
+
+        if (false   === $this->matches($uri, $method)){
+            throw new InvalidUrlException();
+        }
+
+        $uriRequestSegments = $this->splitUri($uri);
+        $uriSegments = $this->splitUri($this->uri);
+
+        for ($i = 0; $i < count($uriSegments); $i++) {
+
+            if ($uriSegments[$i] === $uriRequestSegments[$i]) {
+                continue;
+            }
+
+            if ($parameterName = $this->getParameterFromSegment($uriSegments[$i])) {
+                if (in_array($parameterName, $this->parameters)) {
+                    $this->setParameterValue($parameterName, $uriRequestSegments[$i]);
+                    continue;
+                }
+            }
+            return false;
+        }
+
 
         $this->prepareCallback();
         $this->setArgsCallback();
