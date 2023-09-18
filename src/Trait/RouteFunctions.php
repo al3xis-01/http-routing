@@ -44,12 +44,12 @@ trait RouteFunctions
             return trim($segment, ':');
         }
 
+
         return false;
     }
 
     private function extractParametersFromUri(string $uri): array
     {
-        $uri    =   $this->cleanRequestUri($uri);
         $uriSegments = $this->splitUri($uri);
         $parameters   =   [];
 
@@ -78,7 +78,6 @@ trait RouteFunctions
                 $info['object'] =   $resource;
                 $info['method'] =   $method;
                 return $info;
-
             }
 
             if (is_string($resource)){
