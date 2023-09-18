@@ -14,20 +14,45 @@ This library is currently not available on Composer, so it can only be used loca
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$router = new \Yolanda\Http\Routing\Router();
+class Test{
+    public function __construct()
+    {
+    }
+
+    public function funcion1(int $digit): string
+    {
+
+        return number_format($digit * pi(), 2);
+    }
+
+}
+
+function funcion2(string $digit2): string
+{
+    return 'ok: '. $digit2;
+}
+
+$router     =   new \Yolanda\Http\Routing\Router();
+
+$test   =   new Test();
 
 $router->name('route1')
-    ->get('/route1/{digit}', [\Routing\Test::class, 'funcion1'])
+    ->get('/route1/{digit}', [Test::class,'funcion1'])
     ->done();
 
 $router->name('route2')
-    ->post('/route2/:digit2', [\Routing\Test::class, 'funcion2'])
+    ->get('/route2/:digit2', 'funcion2')
     ->done();
 
-$resultOfCurrentRoute    =    $router->done();
+$router->name('route3')
+    ->get('/route3/:digit', [$test, 'funcion1'])
+    ->done();
 
-// Print a result of current route
-echo    $resultOfCurrentRoute;
+$uri    =   $_SERVER['REQUEST_URI'];
+$method =   $_SERVER['REQUEST_METHOD'];
+
+print $router->done($uri, $method);
+
 ```
 
 ## Project Structure
