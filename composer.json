@@ -1,11 +1,11 @@
 {
-    "name": "alexis/php-routing",
+    "name": "alexis/http-routing",
     "description": "A lightweight and flexible routing library for PHP applications. Simplify the management of routes, define endpoints, and handle URL routing seamlessly within your web projects using this easy-to-use PHP routing library.",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Yolanda\\Routing\\": "src/",
+            "Yolanda\\Http\\Routing\\": "src/",
             "Tests\\": "tests/"
         }
     },
