@@ -69,16 +69,16 @@ class Router
     /**
      * Performs route search based on the REQUEST_URI and REQUEST_METHOD variables of the server
      *
+     * @param string $uri
+     * @param string $method
+     * @return mixed
      * @throws InvalidFunctionParametersException
      * @throws InvalidUrlParametersException
-     * @throws RouteNotFoundException
      * @throws ReflectionException
-     * @return mixed
+     * @throws RouteNotFoundException
      */
-    public function done(): mixed
+    public function done(string $uri = '/', string $method = 'GET'): mixed
     {
-        $uri    =   $_SERVER['REQUEST_URI'];
-        $method =   $_SERVER['REQUEST_METHOD'];
         return $this->doneWithParameters($uri, $method);
     }
 
