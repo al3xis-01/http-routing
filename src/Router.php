@@ -98,7 +98,7 @@ class Router
         $uri    =   $this->cleanRequestUri($uri);
         if ($route = $this->match($uri, $method)){
             /** Implement a logic before */
-            return $route->dispatch();
+            return $route->dispatch($uri, $method);
         }
 
         throw new RouteNotFoundException($uri);
